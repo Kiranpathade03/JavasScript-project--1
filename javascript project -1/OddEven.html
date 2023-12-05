@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Even or Odd Checker</title>
+</head>
+<style>
+    .main {
+        width: 80%;
+        height: 400px;
+        border: 1px solid black;
+        margin: 10px;
+        padding: 20px;
+        margin-left: 0%;
+        background-color: rgb(242, 252, 179);
+    }
+    
+    #inputNumber {
+        height: 30px;
+        width: 250px;
+        position: relative;
+        left: 50px;
+    }
+    
+    .Number:focus {
+        border: 3px solid skyblue;
+        outline: none;
+    }
+    
+    .button {
+        border-radius: 20px;
+        border: 1px solid black;
+        height: 30px;
+        width: 100px;
+        position: relative;
+        left: 130px;
+    }
+    
+    .button:hover {
+        background-color: black;
+        color: white;
+    }
+    
+    #result {
+        margin-left: 50px;
+    }
+</style>
+
+<body>
+
+    <div class="main">
+        <h1>Even or Odd Checker</h1>
+        <p>Enter a number:</p>
+        <input class="Number" type="number" id="inputNumber"><br><br>
+        <button class="button" onclick="checkEvenOrOdd()">Check</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkEvenOrOdd() {
+            // Get the input value
+            var inputValue = document.getElementById("inputNumber").value;
+
+            // Check if the input is a valid number
+            if (!isNaN(inputValue)) {
+                // Check if the number is even or odd
+                if (inputValue % 2 === 0) {
+                    document.getElementById("result").innerHTML = inputValue + " is even.";
+                } else {
+                    document.getElementById("result").innerHTML = inputValue + " is odd.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Please enter a valid number.";
+            }
+        }
+    </script>
+</body>
+
+</html>
